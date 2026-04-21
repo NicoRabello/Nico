@@ -7,7 +7,7 @@ export const projects = [
         theme: { primary: "#00d4ff" },
         assets: {
             heroBg: "linear-gradient(135deg, #00d4ff22 0%, #000000 100%)",
-            badge: "SEO ENGINE v2.0"
+            badge: "SEO ENGINE"
         },
         animationConfig: { type: "parallax", speed: 0.5 },
         content: {
@@ -38,6 +38,27 @@ export const projects = [
                 { label: "Distractions", value: "12%" }
             ],
             features: ["Bloqueio customizável", "Dashboard Analítico", "Histórico de Score"]
+        }
+    },
+    {
+        id: "about-me",
+        name: "About Me",
+        title: "ABOUT",
+        template: "about", // Layout focado em apresentação pessoal
+        theme: { primary: "#2fee15" },
+        assets: {
+            heroBg: "linear-gradient(135deg, #2fee15 0%, #000000 100%)",
+            badge: "Curiosities & preferences"
+        },
+        animationConfig: { type: "parallax", speed: 0.5 },
+        content: {
+            headline: "Data Mining • SEO Structure",
+            overview: "O Crawler Eye automatiza a auditoria técnica de SEO, identificando falhas de marcação instantaneamente.",
+            sections: [
+                { title: "Movies", items: ["URL Direta", "Sitemap.xml", "Deep Crawl"] },
+                { title: "Music", items: ["JSON-LD", "Microdata", "Scripts"] },
+                { title: "Books", items: ["JSON-LD", "Microdata", "Scripts"] }
+            ]
         }
     }
 ];
