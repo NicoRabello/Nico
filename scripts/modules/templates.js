@@ -2,7 +2,7 @@
 export const templates = {
     seo: (project) => `
         <div class="project-hero" style="--project-color: ${project.theme.primary}">
-            <div class="hero-parallax-bg" style="background: ${project.assets.heroBg}"></div>
+            <div class="hero-parallax-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)), url(${project.assets.image}); background-size: cover; background-position: center;"></div>
             <div class="hero-content">
                 <span class="hero-parallax-badge">${project.assets.badge}</span>
                 <h1 class="hero-parallax-title">${project.title}</h1>
@@ -27,7 +27,7 @@ export const templates = {
 
     dashboard: (project) => `
         <div class="project-hero" style="--project-color: ${project.theme.primary}">
-            <div class="hero-parallax-bg" style="background: ${project.assets.heroBg}"></div>
+            <div class="hero-parallax-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)), url(${project.assets.image}); background-size: cover; background-position: center;"></div>
             <div class="hero-content">
                 <h1 class="hero-parallax-title">${project.title}</h1>
                 <div class="metrics-row">
@@ -52,6 +52,31 @@ export const templates = {
                         ${project.content.features.map(f => `<li>${f}</li>`).join('')}
                     </ul>
                 </section>
+            </div>
+        </div>
+    `,
+
+    about: (project) => `
+        <div class="project-hero" style="--project-color: ${project.theme.primary}">
+            <div class="hero-parallax-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg)), url(${project.assets.image}); background-size: cover; background-position: center;"></div>
+            <div class="hero-content">
+                <span class="hero-parallax-badge">${project.assets.badge}</span>
+                <h1 class="hero-parallax-title">${project.title}</h1>
+                <p class="hero-tagline">${project.content.headline}</p>
+            </div>
+        </div>
+        <div class="project-body" style="--project-color: ${project.theme.primary}">
+            <section class="body-section">
+                <h2>Overview</h2>
+                <div class="summary-card">${project.content.overview}</div>
+            </section>
+            <div class="body-grid">
+                ${project.content.sections.map(sec => `
+                    <div class="detail-card">
+                        <h3>${sec.title}</h3>
+                        <ul>${sec.items.map(item => `<li>${item}</li>`).join('')}</ul>
+                    </div>
+                `).join('')}
             </div>
         </div>
     `

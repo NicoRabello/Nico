@@ -27,8 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         Animations.animateCarousel(track, index);
         
-        // Update Theme Dinâmico via Variável CSS no Body
+        // Update Theme Dinâmico via Variáveis CSS no Body
         document.body.style.setProperty('--accent', project.theme.primary);
+        document.body.style.setProperty('--bg', project.theme.pageBg || '#0a0a0a');
+        
         DOM.updateHeroTitle(heroTitle, project.title);
     };
 

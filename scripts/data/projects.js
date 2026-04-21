@@ -4,8 +4,12 @@ export const projects = [
         name: "Crawler Eye",
         title: "CRAWLER",
         template: "seo", // Layout focado em métricas e análise
-        theme: { primary: "#00d4ff" },
+        theme: { 
+            primary: "#00d4ff",
+            pageBg: "#05161a" // Fundo escuro azulado
+        },
         assets: {
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop",
             heroBg: "linear-gradient(135deg, #00d4ff22 0%, #000000 100%)",
             badge: "SEO ENGINE"
         },
@@ -24,8 +28,12 @@ export const projects = [
         name: "Focus Pulse",
         title: "FOCUS",
         template: "dashboard", // Layout focado em visualização de dados
-        theme: { primary: "#ff3e00" },
+        theme: { 
+            primary: "#ff3e00",
+            pageBg: "#1a0b05" // Fundo escuro avermelhado
+        },
         assets: {
+            image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=2000&auto=format&fit=crop",
             heroBg: "linear-gradient(135deg, #ff3e0022 0%, #000000 100%)",
             badge: "PRODUCTIVITY v1.5"
         },
@@ -45,8 +53,12 @@ export const projects = [
         name: "About Me",
         title: "ABOUT",
         template: "about", // Layout focado em apresentação pessoal
-        theme: { primary: "#2fee15" },
+        theme: { 
+            primary: "#2fee15",
+            pageBg: "#080f05" // Fundo escuro esverdeado
+        },
         assets: {
+            image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
             heroBg: "linear-gradient(135deg, #2fee15 0%, #000000 100%)",
             badge: "Curiosities & preferences"
         },
@@ -55,9 +67,9 @@ export const projects = [
             headline: "Data Mining • SEO Structure",
             overview: "O Crawler Eye automatiza a auditoria técnica de SEO, identificando falhas de marcação instantaneamente.",
             sections: [
-                { title: "Movies", items: ["URL Direta", "Sitemap.xml", "Deep Crawl"] },
-                { title: "Music", items: ["JSON-LD", "Microdata", "Scripts"] },
-                { title: "Books", items: ["JSON-LD", "Microdata", "Scripts"] }
+                { title: "Movies", items: ["Interstellar", "Justice League", "Inception"] },
+                { title: "Music", items: ["Mattel", "Not Ready to Die", "The fight"] },
+                { title: "Pets", items: ["Gatinha", "Kira", "Chris"] }
             ]
         }
     }
