@@ -1,0 +1,15 @@
+/* Dot visual thumb dinâmico */
+.dot::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(135deg, var(--project-color) 0%, #000 150%);
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.nav-item.active .dot {
+    transform: scale(1.5);
+    background: var(--project-color);
+    box-shadow: 0 0 15px var(--project-color);
+}
