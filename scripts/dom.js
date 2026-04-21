@@ -1,28 +1,17 @@
 import { templates } from './modules/templates.js';
+import { Card } from '../components/Card.js';
+import { NavItem } from '../components/NavItem.js';
 
 export const renderCarouselCards = (container, projects) => {
-    container.innerHTML = projects.map((project, index) => `
-        <section class="card ${index === 0 ? 'active' : ''}" data-id="${project.id}">
-            <div class="card-inner" style="
-                border-right-color: ${project.theme.primary};
-                background-image: ${project.assets.image ? `url(${project.assets.image})` : 'none'};
-                background-size: cover;
-                background-position: center;
-            ">
-                <p style="color: ${project.theme.primary}">${project.name.split(' ')[0]}</p>
-                <h2>${project.name}</h2>
-            </div>
-        </section>
-    `).join('');
+    container.innerHTML = projects.map((project, index) => 
+        Card({ project, index })
+    ).join('');
 };
 
 export const renderSideNav = (container, projects) => {
-    container.innerHTML = projects.map((project, index) => `
-        <div class="nav-item ${index === 0 ? 'active' : ''}" data-index="${index}" data-id="${project.id}">
-            <div class="dot" style="--project-color: ${project.theme.primary}"></div>
-            <span class="nav-label">${project.name}</span>
-        </div>
-    `).join('');
+    container.innerHTML = projects.map((project, index) => 
+        NavItem({ project, index })
+    ).join('');
 };
 
 // Agora usa o sistema de templates
