@@ -11,6 +11,29 @@
     justify-content: center;
     transition: width 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     border-left: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden; /* Evita que o texto escape no colapso */
+}
+
+.nav-label {
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    visibility: hidden; /* Nenhuma letra visível no estado colapsado */
+    transform: translateX(10px);
+    transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+    white-space: nowrap;
+}
+
+.side-nav:hover .nav-label {
+    opacity: 0.6;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.nav-item:hover .nav-label {
+    opacity: 1;
 }
 
 .side-nav:hover { width: 320px; }
@@ -67,7 +90,8 @@
 
 /* Cards Slanted */
 .card {
-    height: 60vh; width: 80%;
+    height: 60vh; 
+    width: 90%;
     margin: 5vh 0;
     perspective: 2000px;
     display: flex;
