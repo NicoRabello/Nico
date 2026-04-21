@@ -1,3 +1,5 @@
+import { templates } from './modules/templates.js';
+
 export const renderCarouselCards = (container, projects) => {
     container.innerHTML = projects.map((project, index) => `
         <section class="card ${index === 0 ? 'active' : ''}" data-id="${project.id}">
@@ -18,34 +20,10 @@ export const renderSideNav = (container, projects) => {
     `).join('');
 };
 
+// Agora usa o sistema de templates
 export const renderProjectDetail = (container, project) => {
-    container.innerHTML = `
-        <div class="project-hero" style="--project-color: ${project.theme.primary}">
-            <div class="hero-parallax-bg"></div>
-            <div class="hero-content">
-                <span class="hero-parallax-badge">${project.backgroundText}</span>
-                <h1 class="hero-parallax-title">${project.title}</h1>
-            </div>
-        </div>
-        
-        <div class="project-body" style="--project-color: ${project.theme.primary}">
-            <section class="body-section">
-                <h2 style="color: ${project.theme.primary}">Overview</h2>
-                <p class="summary-card" style="border-left-color: ${project.theme.primary}">
-                    ${project.content.overview}
-                </p>
-            </section>
-
-            <section class="body-grid">
-                ${project.content.features.map(feature => `
-                    <div class="detail-card">
-                        <h3 style="color: ${project.theme.primary}">${feature.title}</h3>
-                        <p>${feature.desc}</p>
-                    </div>
-                `).join('')}
-            </section>
-        </div>
-    `;
+    const templateFn = templates[project.template] || templates.seo;
+    container.innerHTML = templateFn(project);
 };
 
 export const updateActiveNav = (navItems, index) => {

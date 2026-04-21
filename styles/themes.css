@@ -1,15 +1,74 @@
-/* Dot visual thumb dinâmico */
-.dot::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(135deg, var(--project-color) 0%, #000 150%);
-    opacity: 1;
-    transition: 0.3s;
+/* Layout SEO (Base) - Já definido em layout.css, mas garantindo especificidades */
+
+/* Layout Dashboard */
+.metrics-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
 }
 
-.nav-item.active .dot {
-    transform: scale(1.5);
-    background: var(--project-color);
-    box-shadow: 0 0 15px var(--project-color);
+.metric-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.m-val {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--project-color);
+}
+
+.m-lab {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.feature-pills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.feature-pills li {
+    background: rgba(255,255,255,0.05);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid var(--project-color);
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.detail-card ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.detail-card li {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.detail-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--project-color);
 }
