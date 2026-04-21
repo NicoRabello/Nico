@@ -14,7 +14,6 @@ export const renderSideNav = (container, projects) => {
     ).join('');
 };
 
-// Agora usa o sistema de templates
 export const renderProjectDetail = (container, project) => {
     const templateFn = templates[project.template] || templates.seo;
     container.innerHTML = templateFn(project);

@@ -3,13 +3,13 @@ export const projects = [
         id: "crawler-eye",
         name: "Crawler Eye",
         title: "CRAWLER",
-        template: "seo", // Layout focado em métricas e análise
+        template: "seo", 
         theme: { 
             primary: "#00d4ff",
-            pageBg: "#05161a" // Fundo escuro azulado
+            pageBg: "#010d1f" 
         },
         assets: {
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop",
+            image: "../../images/crawlerEye.png",
             heroBg: "linear-gradient(135deg, #00d4ff22 0%, #000000 100%)",
             badge: "SEO ENGINE"
         },
@@ -19,7 +19,8 @@ export const projects = [
             overview: "O Crawler Eye automatiza a auditoria técnica de SEO, identificando falhas de marcação instantaneamente.",
             sections: [
                 { title: "Input Strategy", items: ["URL Direta", "Sitemap.xml", "Deep Crawl"] },
-                { title: "Analysis", items: ["JSON-LD", "Microdata", "Scripts"] }
+                { title: "Analysis", items: ["JSON-LD", "Microdata", "Scripts"] },
+                {title: "To test", items: ["access link: https://crawlereye.onrender.com"] }
             ]
         }
     },
@@ -27,10 +28,10 @@ export const projects = [
         id: "focus-pulse",
         name: "Focus Pulse",
         title: "FOCUS",
-        template: "dashboard", // Layout focado em visualização de dados
+        template: "dashboard",
         theme: { 
             primary: "#ff3e00",
-            pageBg: "#1a0b05" // Fundo escuro avermelhado
+            pageBg: "#1a0b05" 
         },
         assets: {
             image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=2000&auto=format&fit=crop",
@@ -52,10 +53,10 @@ export const projects = [
         id: "about-me",
         name: "About Me",
         title: "ABOUT",
-        template: "about", // Layout focado em apresentação pessoal
+        template: "about", 
         theme: { 
             primary: "#2fee15",
-            pageBg: "#080f05" // Fundo escuro esverdeado
+            pageBg: "#080f05" 
         },
         assets: {
             image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
@@ -64,13 +65,60 @@ export const projects = [
         },
         animationConfig: { type: "parallax", speed: 0.5 },
         content: {
-            headline: "Data Mining • SEO Structure",
-            overview: "O Crawler Eye automatiza a auditoria técnica de SEO, identificando falhas de marcação instantaneamente.",
+            headline: "More about me",
+            overview: "",
             sections: [
                 { title: "Movies", items: ["Interstellar", "Justice League", "Inception"] },
                 { title: "Music", items: ["Mattel", "Not Ready to Die", "The fight"] },
                 { title: "Pets", items: ["Gatinha", "Kira", "Chris"] }
             ]
         }
-    }
+    },
+    {
+        id: "career-timeline",
+        name: "Career Timeline",
+        title: "CAREER",
+        template: "career", 
+        theme: { 
+            primary: "#6C5CE7",
+            pageBg: "#1d193b" 
+        },
+        assets: {
+            image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
+            heroBg: "linear-gradient(135deg, #2fee15 0%, #000000 100%)",
+            badge: "Experience & Expertise"
+        },
+        animationConfig: { type: "parallax", speed: 0.5 },
+        content: {
+            sections: [
+                { title: "Movies", items: ["Interstellar", "Justice League", "Inception"] },
+                { title: "Music", items: ["Mattel", "Not Ready to Die", "The fight"] },
+                { title: "Pets", items: ["Gatinha", "Kira", "Chris"] }
+            ],
+            experience: [
+                { 
+                    enterprise: "iMDT",
+                    expertise: "Desenvolvedor Full Stack especializado em soluções de SEO e automação de dados, com experiência em projetos de grande escala para otimização de presença digital." 
+                },
+                { 
+                    enterprise: "Metrovia Telecom",
+                    expertise: "Desenvolvedor Full Stack especializado em soluções de SEO e automação de dados, com experiência em projetos de grande escala para otimização de presença digital." 
+                },
+                { 
+                    enterprise: "Agência Set",
+                    expertise: "Desenvolvedor Full Stack especializado em soluções de SEO e automação de dados, com experiência em projetos de grande escala para otimização de presença digital." 
+                },
+                { 
+                    enterprise: "Prefeitura municipal de Balneário Camboriú",
+                    expertise: "Desenvolvedor Full Stack especializado em soluções de SEO e automação de dados, com experiência em projetos de grande escala para otimização de presença digital." 
+                },
+                { 
+                    enterprise: "Oficina do Notebook",
+                    expertise: "Desenvolvedor Full Stack especializado em soluções de SEO e automação de dados, com experiência em projetos de grande escala para otimização de presença digital." 
+                },
+            ],
+
+            
+        }
+    },
 ];

@@ -14,7 +14,6 @@ export const transitionToHome = (home, detail) => {
         .to(home, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" });
 };
 
-// Motor de Animações Dinâmico
 export const applyProjectAnimations = (container, config) => {
     const bg = container.querySelector('.hero-parallax-bg');
     const content = container.querySelector('.hero-content');
@@ -28,7 +27,6 @@ export const applyProjectAnimations = (container, config) => {
     }
 
     if (config.type === "focus-reveal") {
-        // Exemplo de animação diferente: escala no scroll
         container.addEventListener('scroll', () => {
             const st = container.scrollTop;
             if (bg) bg.style.opacity = 0.2 + (st / 500);

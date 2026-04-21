@@ -4,22 +4,36 @@
     --bg: #0a0a0a;
     --text: #ffffff;
     --transition-main: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --carousel-offset: 70vh;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
-    background: var(--bg); 
+    background-color: var(--bg-color, #0a0a0a);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--text); 
     font-family: 'Inter', sans-serif;
     overflow: hidden;
     height: 100vh;
     transition: background 1s ease;
 }
+
+h1, h2, h3 {
+    line-height: 1.1;
+}
+
 #hero-title {
     position: fixed;
     top: 20%; 
     left: 10%;
-    font-size: 5vw;
+    font-size: clamp(3rem, 6vw, 8rem);
+}
 
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }

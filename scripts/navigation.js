@@ -23,7 +23,6 @@ export class Navigation {
         DOM.renderProjectDetail(this.detailView, project);
         
         Animations.transitionToDetail(this.homeView, this.detailView, () => {
-            // Aplica animações específicas configuradas no JSON
             Animations.applyProjectAnimations(this.detailView, project.animationConfig);
         });
     }

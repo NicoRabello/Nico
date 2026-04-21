@@ -1,6 +1,7 @@
 import { ProjectHero } from '../../components/ProjectHero.js';
 import { DetailCard } from '../../components/DetailCard.js';
 import { MetricItem } from '../../components/MetricItem.js';
+import { Roadmap } from '../../components/Roadmap.js';
 
 export const templates = {
     seo: (project) => `
@@ -59,5 +60,21 @@ export const templates = {
                 ).join('')}
             </div>
         </div>
-    `
+    `,
+    career: (project) => `
+        ${ProjectHero({ project })}
+            <div class="project-body" style="--project-color: ${project.theme.primary}">
+                <div class="body-grid">
+                    ${project.content.experience?.length 
+                        ? project.content.experience.map(exp => `
+                            <div class="summary-card">
+                                <h3>${exp.enterprise}</h3>
+                                <p>${exp.expertise}</p>
+                            </div><br>
+                        `).join("")
+                        : "<p>Nenhuma experiência cadastrada</p>"
+                    }
+                </div>
+            </div>
+    `,
 };
