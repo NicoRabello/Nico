@@ -3,17 +3,19 @@ export const projects = [
         id: "crawler-eye",
         name: "Crawler Eye",
         title: "CRAWLER",
-        description: "Rastreador de dados estruturados focado em performance SEO.",
-        backgroundText: "DATA MINING • SEO STRUCTURE • JSON-LD",
-        theme: {
-            primary: "#00d4ff"
+        template: "seo", // Layout focado em métricas e análise
+        theme: { primary: "#00d4ff" },
+        assets: {
+            heroBg: "linear-gradient(135deg, #00d4ff22 0%, #000000 100%)",
+            badge: "SEO ENGINE v2.0"
         },
+        animationConfig: { type: "parallax", speed: 0.5 },
         content: {
-            overview: "O Crawler Eye automatiza a auditoria técnica de SEO, permitindo identificação instantânea de falhas de marcação.",
-            features: [
-                { title: "Input Strategy", desc: "Processamento via URL direta ou sitemap.xml." },
-                { title: "Analysis Engine", desc: "Auditoria profunda de scripts JSON-LD." },
-                { title: "SEO Action", desc: "Sugestões de correções táticas para ranking." }
+            headline: "Data Mining • SEO Structure",
+            overview: "O Crawler Eye automatiza a auditoria técnica de SEO, identificando falhas de marcação instantaneamente.",
+            sections: [
+                { title: "Input Strategy", items: ["URL Direta", "Sitemap.xml", "Deep Crawl"] },
+                { title: "Analysis", items: ["JSON-LD", "Microdata", "Scripts"] }
             ]
         }
     },
@@ -21,36 +23,21 @@ export const projects = [
         id: "focus-pulse",
         name: "Focus Pulse",
         title: "FOCUS",
-        description: "Extensão de produtividade para gestão de tempo e foco.",
-        backgroundText: "FLOW STATE • DEEP WORK • METRICS",
-        theme: {
-            primary: "#ff3e00"
+        template: "dashboard", // Layout focado em visualização de dados
+        theme: { primary: "#ff3e00" },
+        assets: {
+            heroBg: "linear-gradient(135deg, #ff3e0022 0%, #000000 100%)",
+            badge: "PRODUCTIVITY v1.5"
         },
+        animationConfig: { type: "focus-reveal", speed: 0.8 },
         content: {
-            overview: "Projetada para eliminar distrações e otimizar o fluxo de trabalho cognitivo através de métricas de Deep Work.",
-            features: [
-                { title: "Attention Analytics", desc: "Dashboard visual com métricas de tempo produtivo." },
-                { title: "Max Focus Mode", desc: "Bloqueio customizável de 1 min a 2h." },
-                { title: "Productivity Score", desc: "Sistema de pontuação baseado na consistência." }
-            ]
-        }
-    },
-    {
-        id: "teste",
-        name: "teste",
-        title: "teste",
-        description: "Extensão de produtividade para gestão de tempo e foco.",
-        backgroundText: "FLOW STATE • DEEP WORK • METRICS",
-        theme: {
-            primary: "#16da16"
-        },
-        content: {
-            overview: "Projetada para eliminar distrações e otimizar o fluxo de trabalho cognitivo através de métricas de Deep Work.",
-            features: [
-                { title: "Attention Analytics", desc: "Dashboard visual com métricas de tempo produtivo." },
-                { title: "Max Focus Mode", desc: "Bloqueio customizável de 1 min a 2h." },
-                { title: "Productivity Score", desc: "Sistema de pontuação baseado na consistência." }
-            ]
+            headline: "Flow State • Deep Work",
+            overview: "Extensão projetada para eliminar distrações e otimizar o fluxo de trabalho cognitivo.",
+            metrics: [
+                { label: "Deep Work", value: "85%" },
+                { label: "Distractions", value: "12%" }
+            ],
+            features: ["Bloqueio customizável", "Dashboard Analítico", "Histórico de Score"]
         }
     }
 ];

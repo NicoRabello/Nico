@@ -1,34 +1,40 @@
 export const transitionToDetail = (home, detail, callback) => {
     gsap.timeline()
-        .to(home, { opacity: 0, y: -20, duration: 0.6, ease: "power2.inOut" })
+        .to(home, { opacity: 0, scale: 0.95, duration: 0.6, ease: "power2.inOut" })
         .set(home, { display: 'none' })
-        .set(detail, { display: 'block', opacity: 0, y: 20 })
+        .set(detail, { display: 'block', opacity: 0, y: 30 })
         .to(detail, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", onComplete: callback });
 };
 
 export const transitionToHome = (home, detail) => {
     gsap.timeline()
-        .to(detail, { opacity: 0, y: 20, duration: 0.4, ease: "power2.inOut" })
+        .to(detail, { opacity: 0, y: 30, duration: 0.4, ease: "power2.inOut" })
         .set(detail, { display: 'none' })
-        .set(home, { display: 'block', opacity: 0, y: -20 })
-        .to(home, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" });
+        .set(home, { display: 'block', opacity: 0, scale: 0.95 })
+        .to(home, { opacity: 1, scale: 1, duration: 0.6, ease: "power2.out" });
 };
 
-export const initParallax = (container) => {
+// Motor de Animações Dinâmico
+export const applyProjectAnimations = (container, config) => {
     const bg = container.querySelector('.hero-parallax-bg');
-    const title = container.querySelector('.hero-parallax-title');
-    const badge = container.querySelector('.hero-parallax-badge');
+    const content = container.querySelector('.hero-content');
 
-    container.addEventListener('scroll', () => {
-        const st = container.scrollTop;
-        
-        // Background moves at 0.5x
-        if (bg) bg.style.transform = `translateY(${st * 0.5}px)`;
-        
-        // Title and Badge move at 1.2x for depth
-        if (title) title.style.transform = `translateY(${st * -0.2}px)`;
-        if (badge) badge.style.transform = `translateY(${st * -0.3}px)`;
-    });
+    if (config.type === "parallax") {
+        container.addEventListener('scroll', () => {
+            const st = container.scrollTop;
+            if (bg) bg.style.transform = `translateY(${st * config.speed}px)`;
+            if (content) content.style.transform = `translateY(${st * -0.2}px)`;
+        });
+    }
+
+    if (config.type === "focus-reveal") {
+        // Exemplo de animação diferente: escala no scroll
+        container.addEventListener('scroll', () => {
+            const st = container.scrollTop;
+            if (bg) bg.style.opacity = 0.2 + (st / 500);
+            if (content) content.style.opacity = 1 - (st / 600);
+        });
+    }
 };
 
 export const animateCarousel = (track, index) => {
